@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find rikibot_object_detect)/launch/rikibot_facename_object.launch" />
+  <node name="rikibot_speaker_node" pkg="rikibot_ai_speech" type="rikibot_speaker_node.py" output="screen"/>
+  <node name="rikibot_chat_node" pkg="rikibot_ai_speech" type="rikibot_speech_greet.py" output="screen">
+     <param name="device_id" type="int" value="22" />
+  </node>
+  <node pkg="rikibot_x7_grasp" type="x7_shake.py" name="x7_shake_node" output="screen" />
+</launch>
